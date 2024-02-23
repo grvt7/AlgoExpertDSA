@@ -15,4 +15,16 @@ public class ValidateSubsequence {
         }
         return sIndex == sequence.size();
     }
+
+    // O(n) time | O(1) space
+    public static boolean isValidSubsequence2(
+            List<Integer> array, List<Integer> sequence) {
+        int aIndex = 0, sIndex = 0;
+        while (aIndex < array.size() && sIndex < sequence.size()) {
+            if (array.get(aIndex).equals(sequence.get(sIndex)))
+                sIndex++;
+            aIndex++;
+        }
+        return sIndex == sequence.size();
+    }
 }
